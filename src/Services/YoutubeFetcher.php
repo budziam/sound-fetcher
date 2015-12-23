@@ -15,7 +15,7 @@ use Google_Service_YouTube_VideoListResponse;
 
 class YoutubeFetcher
 {
-    const NON_FETCHED_LOG = APP_PATH.'src/storage/logs/non-fetched.log';
+    const NON_FETCHED_LOG = APP_PATH.'storage/logs/non-fetched.log';
 
     /**
      * Id youtube fetcher in debug mode
@@ -29,7 +29,7 @@ class YoutubeFetcher
      *
      * @var string
      */
-    protected $path = APP_PATH.'src/storage/sounds/';
+    protected $path = APP_PATH.'storage/sounds/';
 
     /**
      * Should non fetched songs be logged
@@ -91,7 +91,7 @@ class YoutubeFetcher
         }
 
         // Save audio
-        $path = realpath($this->path . '/' . str_replace('/', ' ', $query) . '.mp3');
+        $path = $this->path . str_replace('/', ' ', $query) . '.mp3';
 
         $this->debug('Saving to: ' . $path);
         file_put_contents($path, $track);
