@@ -22,7 +22,7 @@ class YoutubeFetcher
      *
      * @var bool
      */
-    protected $debug = true;
+    protected $debug = false;
 
     /**
      * Path where sound are saved to
@@ -91,7 +91,7 @@ class YoutubeFetcher
         }
 
         // Save audio
-        $path = $this->path . '/' . str_replace('/', ' ', $query) . '.mp3';
+        $path = realpath($this->path . '/' . str_replace('/', ' ', $query) . '.mp3');
 
         $this->debug('Saving to: ' . $path);
         file_put_contents($path, $track);
