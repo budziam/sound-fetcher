@@ -15,7 +15,7 @@ use Google_Service_YouTube_VideoListResponse;
 
 class YoutubeFetcher
 {
-    const NON_FETCHED_LOG = APP_PATH.'storage/logs/non-fetched.log';
+    const NON_FETCHED_LOG = APP_PATH . 'storage/logs/non-fetched.log';
 
     /**
      * Id youtube fetcher in debug mode
@@ -29,7 +29,7 @@ class YoutubeFetcher
      *
      * @var string
      */
-    protected $path = APP_PATH.'storage/sounds/';
+    protected $path = APP_PATH . 'storage/sounds/';
 
     /**
      * Should non fetched songs be logged
@@ -227,7 +227,7 @@ class YoutubeFetcher
     /**
      * Add debug info
      *
-     * @param $message
+     * @param        $message
      * @param string $status
      */
     protected function debug($message, $status = 'error')
